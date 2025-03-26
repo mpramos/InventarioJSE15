@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h1>Importar Productos desde FakeStore a Firebase</h1>
+    <div>
+        <input type="text" id="search" placeholder="Buscar productos...">
+        <select id="category-filter">
+            <option value="">Todas las categorías</option>
+        </select>
+    </div>
+    <div id="container-products"></div>
+
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/inventory.js"></script>
+</body>
+</html>
