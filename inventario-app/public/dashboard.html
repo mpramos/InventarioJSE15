@@ -1,14 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invento - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+          integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <h1>Dashboard</h1>
-    <button id="logoutBtn">logout</button>
-    <script src="./js/auth.js" type="module"></script>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="custom-bg-blue text-white vh-100 p-3" style="width: 250px;">
+      <h2 class="text-center">Invento</h2>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white load-page" data-page="inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white load-page" data-page="inventory.html">Toma de inventario</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white load-page" data-page="reports.html">Reportes</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white load-page" data-page="usuarios.html">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white load-page" data-page="settings.html">Configuraciones</a>
+        </li>
+      </ul>
+      <div class="mt-auto">
+        <button class="btn btn-danger w-100">Cerrar sesión</button>
+      </div>
+    </nav>
     
+    <!-- Contenido principal dinámico -->
+    <div class="p-4" style="flex-grow: 1;" id="main-content">
+      <h1>Bienvenido, <span id="user-name">Usuario</span></h1>
+      <p>Bienvenido a Invento. Organiza tu inventario de manera eficiente con nuestras herramientas.</p>
+    </div>
+  </div>
+
+  <!-- Carga global: Firebase debe cargarse antes -->
+  <script type="module" src="js/firebase.js"></script>
+
+  <!-- Script para cargar páginas dinámicamente con import dinámico -->
+  <script type="module">
+    $(document).ready(function(){
+      $('.load-page').click(function(e){
+        e.preventDefault();
+        const page = $(this).data('page');
+        $('#main-content').fadeOut(200, function() {
+          $(this).load(page, async function(response, status, xhr) {
+            $(this).fadeIn(200);
+            // Si se carga inventory.html, cargar el módulo inventory.js dinámicamente
+            if(page === 'inventory.html'){
+              try {
+                // await import('./js/inventory.js');
+                console.log('inventario cargado satsifactoriamente');
+                
+              } catch(error) {
+                console.error("Error al cargar inventory.js:", error);
+              }
+            
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
