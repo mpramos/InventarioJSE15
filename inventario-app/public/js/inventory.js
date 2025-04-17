@@ -21,10 +21,10 @@ const displayProducts = (productos) => {
     container.innerHTML = productos.map((producto, index) => `
         <div>
             <img height='120px' src="${producto.image}" alt="">
-            <h2>${producto.title}</h2>
+            <p>${producto.title}</p>
             <div>
-                <button id="editar-${index}">Editar</button>
-                <button id="eliminar-${index}">Eliminar</button>
+                <button class="btn btn-danger " id="editar-${index}">Editar</button>
+                <button class="btn btn-danger " id="eliminar-${index}">Eliminar</button>
             </div>
         </div>
     `).join('');
@@ -34,7 +34,7 @@ const filtrarProductos = () => {
     const searchQuery = document.getElementById('search').value.toLowerCase();
     const selectedCategory = document.getElementById('category-filter').value;
     const productosFiltrados = productosGlobales.filter(producto => {
-        const cumpleBusqueda = producto.title.toLowerCase().includes(searchQuery) ||
+    const cumpleBusqueda = producto.title.toLowerCase().includes(searchQuery) ||
             producto.category.toLowerCase().includes(searchQuery) ||
             producto.price.toString().includes(searchQuery);
         const cumpleCategoria = !selectedCategory || producto.category === selectedCategory;
@@ -45,6 +45,5 @@ const filtrarProductos = () => {
 
 document.getElementById('search').addEventListener('input', filtrarProductos);
 document.getElementById('category-filter').addEventListener('change', filtrarProductos);
-document.addEventListener("DOMContentLoaded", getProductsFirebase);
 
 export { getProductsFirebase, filtrarProductos };

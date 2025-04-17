@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,71 +8,114 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
-          integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
   <div class="d-flex">
     <!-- Sidebar -->
-    <nav class="custom-bg-blue text-white vh-100 p-3" style="width: 250px;">
-      <h2 class="text-center">Invento</h2>
+    <nav class="custom-bg-blue text-white vh-100 p-5"  style="width: 260px;">
+      <p class="text-uppercase text-white text-center mt-4 mb-4 fs-6 fw-light text-opacity-75 ">Administrar</p>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a href="#" class="nav-link text-white load-page" data-page="inicio.html">Inicio</a>
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="inicio.html">
+            <img src="./assets/icons/inicio.svg" width="20" alt="Inicio">
+            Inicio
+          </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-white load-page" data-page="inventory.html">Toma de inventario</a>
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="inventory.html">
+            <img src="./assets/icons/referencias.svg" width="20" alt="Inicio">
+            Referencias
+          </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-white load-page" data-page="reports.html">Reportes</a>
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="reports.html">
+            <img src="./assets/icons/tomaInventario.svg" width="20" alt="Inicio">
+            Toma de inventario</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-white load-page" data-page="usuarios.html">Usuarios</a>
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="usuarios.html">
+            <img src="./assets/icons/bodega.svg" width="20" alt="Inicio">
+            Bodegas</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-white load-page" data-page="settings.html">Configuraciones</a>
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="settings.html">
+            <img src="./assets/icons/usuarios.svg" width="20" alt="Inicio">
+            Usuarios </a>
+        </li>
+        <li class="nav-item">
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="reports.html">
+            <img src="./assets/icons/reportes.svg" width="20" alt="Inicio">
+            Reportes </a>
+        </li>
+        <p class="text-uppercase text-white  mt-5 mb-4 fs-6 fw-light text-opacity-75 ">Preferencias</p>
+        <li class="nav-item">
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="reports.html">
+            <img src="./assets/icons/configuracion.svg" width="20" alt="Inicio">
+            Configuraciones </a>
+        </li>
+        <li class="nav-item">
+          <a href="#"
+            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
+            data-page="reports.html">
+            <img src="./assets/icons/seguridad.svg" width="20" alt="Inicio">
+            Seguridad </a>
         </li>
       </ul>
-      <div class="mt-auto">
-        <button class="btn btn-danger w-100">Cerrar sesión</button>
-      </div>
     </nav>
-    
+
+    </nav>
     <!-- Contenido principal dinámico -->
-    <div class="p-4" style="flex-grow: 1;" id="main-content">
+    <div class="p-5" style="flex-grow: 1;" id="main-content">
       <h1>Bienvenido, <span id="user-name">Usuario</span></h1>
       <p>Bienvenido a Invento. Organiza tu inventario de manera eficiente con nuestras herramientas.</p>
     </div>
   </div>
 
-  <!-- Carga global: Firebase debe cargarse antes -->
-  <script type="module" src="js/firebase.js"></script>
-
-  <!-- Script para cargar páginas dinámicamente con import dinámico -->
   <script type="module">
-    $(document).ready(function(){
-      $('.load-page').click(function(e){
+    $(document).ready(function () {
+      $('.load-page').click(function (e) {
         e.preventDefault();
+        console.log('inicia la pagina');
         const page = $(this).data('page');
-        $('#main-content').fadeOut(200, function() {
-          $(this).load(page, async function(response, status, xhr) {
-            $(this).fadeIn(200);
-            // Si se carga inventory.html, cargar el módulo inventory.js dinámicamente
-            if(page === 'inventory.html'){
-              try {
-                // await import('./js/inventory.js');
-                console.log('inventario cargado satsifactoriamente');
-                
-              } catch(error) {
-                console.error("Error al cargar inventory.js:", error);
-              }
-            
+
+        $('#main-content').fadeOut(200, function () {
+          $('#main-content').load(page, function (response, status, xhr) {
+
+            console.log('status ', status);
+            console.log('Load main content')
+            $('#main-content').fadeIn(200);
+
+            if (page === 'inventory.html') {
+              import('./js/inventory.js')
+                .then(module => {
+                  module.getProductsFirebase()
+                })
+                .catch(error => console.error('Error al cargar el módulo', error))
             }
           });
         });
       });
     });
   </script>
+
 </body>
+
 </html>

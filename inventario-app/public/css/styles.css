@@ -1,3 +1,5 @@
+@import url('./dashboard.css');
+@import url('./inventory.css');
 /* Definir variables globales */
 :root {
     /* 🎨 Colores */
@@ -15,6 +17,7 @@
     --border-radius: 8px;
     --padding: 16px;
   }
+
   
   /* Aplicar estilos usando variables */
   body {
