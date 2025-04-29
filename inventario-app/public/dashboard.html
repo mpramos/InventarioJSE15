@@ -29,23 +29,23 @@
         </li>
         <li class="nav-item">
           <a href="#"
-            class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
-            data-page="inventory.html">
+            class="nav-link text-white d-flex align-items-center gap-3 fss-6 fw-light text-opacity-75 load-page"
+            data-page="referencia.html">
             <img src="./assets/icons/referencias.svg" width="20" alt="Inicio">
             Referencias
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="#"
             class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
-            data-page="reports.html">
+            data-page="">
             <img src="./assets/icons/tomaInventario.svg" width="20" alt="Inicio">
             Toma de inventario</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="#"
             class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
-            data-page="usuarios.html">
+            data-page="bodegas.html">
             <img src="./assets/icons/bodega.svg" width="20" alt="Inicio">
             Bodegas</a>
         </li>
@@ -67,14 +67,14 @@
         <li class="nav-item">
           <a href="#"
             class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
-            data-page="reports.html">
+            data-page="#">
             <img src="./assets/icons/configuracion.svg" width="20" alt="Inicio">
             Configuraciones </a>
         </li>
         <li class="nav-item">
           <a href="#"
             class="nav-link text-white d-flex align-items-center gap-3 fs-6 fw-light text-opacity-75 load-page"
-            data-page="reports.html">
+            data-page="#">
             <img src="./assets/icons/seguridad.svg" width="20" alt="Inicio">
             Seguridad </a>
         </li>
@@ -107,8 +107,17 @@
               import('./js/inventory.js')
                 .then(module => {
                   module.getProductsFirebase()
+                  
                 })
                 .catch(error => console.error('Error al cargar el módulo', error))
+            }
+            if (page === 'reports.html') {
+              import('./js/reports.js')
+                .then(module => {
+                  module.default()
+                })
+                .catch(error => console.error('Error al cargar el módulo', error))
+              
             }
           });
         });

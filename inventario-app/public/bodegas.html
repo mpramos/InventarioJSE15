@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de Bodegas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+<div class="container mt-1">
+  <h2 class="">Nueva Bodega</h2>
+
+  <form id="formularioBodega" class="card p-4 shadow-sm">
+
+    <div class="mb-2">
+      <label for="nombreBodega" class="form-label">Nombre Bodega</label>
+      <input type="text" class="form-control" id="nombreBodega" required>
+    </div>
+
+    <div class="mb-2">
+      <label for="localizacion" class="form-label">Seleccione localización</label>
+      <select class="form-select" id="localizacion" required>
+        <option  value="">Localizacion</option>
+        <option value="Almacén Ropa">Almacén Ropa</option>
+        <option value="Almacén Tecnología">Almacén Tecnología</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="mb-2">
+      <label for="codigo" class="form-label">Código</label>
+      <input type="text" class="form-control" id="codigo" required>
+    </div>
+
+    <div class="mb-2">
+      <label for="tipoMaterial" class="form-label">Tipo de material</label>
+      <select class="form-select" id="tipoMaterial" required>
+        <option value="">Seleccione el material</option>
+        <option value="Textil">Textil</option>
+        <option value="Electrónico">Electrónico</option>
+        <option value="Accesorio">Accesorio</option>
+      </select>
+    </div>
+
+    <div class="mb-2">
+      <label for="manejaLote" class="form-label">Maneja Lote</label>
+      <select class="form-select" id="manejaLote" required>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-50 custom-bg-blue mt-3">Crear Bodega →</button>
+
+  </form>
+</div>
+
+<script type="module" src="./js/bodegas.js"></script>
+
+</body>
+</html>

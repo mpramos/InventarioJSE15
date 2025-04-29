@@ -44,3 +44,8 @@
   .custom-bg-blue{
     background-color: var(--primary-color);
   }
+  #main-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100vh;
+  }
